@@ -1,0 +1,8 @@
+includes:
+  - .phpstan/config.neon
+  - .phpstan/baseline.neon
+
+
+parameters:
+  paths:
+      - src
