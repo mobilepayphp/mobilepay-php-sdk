@@ -7,22 +7,22 @@
     <br />
     <br />
     <a href="https://github.com/mobilepayphp/mobilepay-php-sdk/actions">
-        <img src="https://github.com/mobilepayphp/mobilepay-php-sdk/actions/workflows/build.yaml/badge.svg" alt="Build Status">
+        <img src="https://github.com/mobilepayphp/mobilepay-php-sdk/actions/workflows/ci.yaml/badge.svg" alt="ci status">
     </a>
     <a href="https://codecov.io/gh/mobilepayphp/mobilepay-php-sdk">
-        <img src="https://codecov.io/gh/mobilepayphp/mobilepay-php-sdk/branch/main/graph/badge.svg" alt="CodeCov">
+        <img src="https://codecov.io/gh/mobilepayphp/mobilepay-php-sdk/branch/main/graph/badge.svg" alt="codecov">
     </a>
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/version-PHP%208.1%2B-darkblue.svg" alt="PHP Version">
+    <img src="https://img.shields.io/badge/php-8.1%2B-darkblue.svg" alt="php-8.1%2B">
     <a href="https://packagist.org/packages/mobilepayphp/mobilepay-php-sdk">
-        <img src="https://poser.pugx.org/mobilepayphp/mobilepay-php-sdk/v/stable" alt="Latest Version">
+        <img src="https://poser.pugx.org/mobilepayphp/mobilepay-php-sdk/v/stable" alt="latest version">
     </a>
     <a href="https://packagist.org/packages/mobilepayphp/mobilepay-php-sdk">
-        <img src="https://poser.pugx.org/mobilepayphp/mobilepay-php-sdk/downloads" alt="Total Downloads">
+        <img src="https://poser.pugx.org/mobilepayphp/mobilepay-php-sdk/downloads" alt="total downloads">
     </a>
-    <img src="https://poser.pugx.org/mobilepayphp/mobilepay-php-sdk/license" alt="License">
+    <img src="https://poser.pugx.org/mobilepayphp/mobilepay-php-sdk/license" alt="license">
 </p>
 
 ---
