@@ -31,7 +31,7 @@ jobs:
           coverage: none
 
       - name: "Install dependencies"
-        run: composer install --no-interaction --no-progress --no-suggest --optimize-autoloader
+        run: composer install --no-interaction --no-progress --optimize-autoloader
 
       - name: "Check coding style"
         run: make cs-check
@@ -52,7 +52,7 @@ jobs:
           coverage: none
 
       - name: "Install dependencies"
-        run: composer install --no-interaction --no-progress --no-suggest --optimize-autoloader
+        run: composer install --no-interaction --no-progress --optimize-autoloader
 
       - name: "Run static analysis"
         run: make analyse
@@ -78,7 +78,7 @@ jobs:
           coverage: none
 
       - name: "Install dependencies"
-        run: composer update ${{ matrix.prefer-lowest }} --no-interaction --no-progress --no-suggest --optimize-autoloader
+        run: composer update ${{ matrix.prefer-lowest }} --no-interaction --no-progress --optimize-autoloader
 
       - name: "Run tests"
         run: make tests
