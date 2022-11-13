@@ -58,13 +58,14 @@ jobs:
         run: make analyse
 
   tests:
-    name: "Tests on PHP ${{ matrix.php-version }}"
+    name: "Tests on PHP ${{ matrix.php-version }} ${{ matrix.prefer-lowest }}"
 
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         php-version: [ 8.1 ]
+        prefer-lowest: ['', '--prefer-lowest --prefer-stable']
 
     steps:
       - name: "Checkout"
@@ -77,7 +78,7 @@ jobs:
           coverage: none
 
       - name: "Install dependencies"
-        run: composer install --no-interaction --no-progress --no-suggest --optimize-autoloader
+        run: composer update ${{ matrix.prefer-lowest }} --no-interaction --no-progress --no-suggest --optimize-autoloader
 
       - name: "Run tests"
         run: make tests
