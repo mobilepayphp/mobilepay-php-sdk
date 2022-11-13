@@ -8,7 +8,7 @@ env:
   MOBILEPAY_PAYMENT_SOURCE_ID: ${{ secrets.MOBILEPAY_PAYMENT_SOURCE_ID }}
   MOBILEPAY_USER_ID: ${{ secrets.MOBILEPAY_USER_ID }}
 
-name: "Build pipeline"
+name: "CI"
 
 jobs:
   coding-standards:
