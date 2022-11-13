@@ -4,12 +4,17 @@
 
 <p align="center" style="font-weight: bold">
     MobilePay PHP SDK
-</p>
-
-<p align="center">
+    <br />
+    <br />
     <a href="https://github.com/mobilepayphp/mobilepay-php-sdk/actions">
         <img src="https://github.com/mobilepayphp/mobilepay-php-sdk/actions/workflows/build.yaml/badge.svg" alt="Build Status">
     </a>
+    <a href="https://codecov.io/gh/mobilepayphp/mobilepay-php-sdk">
+        <img src="https://codecov.io/gh/mobilepayphp/mobilepay-php-sdk/branch/main/graph/badge.svg" alt="CodeCov">
+    </a>
+</p>
+
+<p align="center">
     <img src="https://img.shields.io/badge/version-PHP%208.1%2B-darkblue.svg" alt="PHP Version">
     <a href="https://packagist.org/packages/mobilepayphp/mobilepay-php-sdk">
         <img src="https://poser.pugx.org/mobilepayphp/mobilepay-php-sdk/v/stable" alt="Latest Version">
