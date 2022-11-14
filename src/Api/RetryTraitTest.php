@@ -55,7 +55,7 @@ final class RetryTraitTest extends TestCase
                 );
             }
 
-            private function backupTimeBaseFactor(): int
+            private function getWaitTimeFactor(): int
             {
                 return 1;
             }

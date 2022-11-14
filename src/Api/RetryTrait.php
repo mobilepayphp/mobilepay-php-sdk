@@ -62,10 +62,10 @@ trait RetryTrait
             $waitTime *= random_int(75, 125) / 100;
         }
 
-        usleep((int) $waitTime * static::backupTimeBaseFactor());
+        usleep((int) $waitTime * static::getWaitTimeFactor());
     }
 
-    private function backupTimeBaseFactor(): int
+    private function getWaitTimeFactor(): int
     {
         return 500;
     }
