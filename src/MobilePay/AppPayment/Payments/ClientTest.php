@@ -2,12 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment;
+namespace Jschaedl\MobilePay\AppPayment\Payments;
 
+use Jschaedl\MobilePay\AppPayment\Amount;
+use Jschaedl\MobilePay\AppPayment\ClientTestTrait;
+use Jschaedl\MobilePay\AppPayment\Id;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\PaymentsGateway
+ * @covers \Jschaedl\MobilePay\AppPayment\Payments\Client
  * @covers \Jschaedl\Api\Client
  * @covers \Jschaedl\Api\IsGetTrait
  * @covers \Jschaedl\Api\IsPostTrait
@@ -29,9 +32,9 @@ use PHPUnit\Framework\TestCase;
  *
  * @group e2e
  */
-final class PaymentsGatewayTest extends TestCase
+final class ClientTest extends TestCase
 {
-    use GatewayTestTrait;
+    use ClientTestTrait;
 
     public function setUp(): void
     {
@@ -40,18 +43,18 @@ final class PaymentsGatewayTest extends TestCase
             static::fail('No paymentPointId is set, check your MOBILEPAY_PAYMENTPOINT_ID env var.');
         }
 
-        $this->paymentsGateway = new PaymentsGateway($this->getMobilePayClient(), $paymentPointId);
+        $this->paymentsClient = new Client($this->getMobilePayClient(), $paymentPointId);
     }
 
     public function test_cancelPayment(): void
     {
         $paymentId = $this->createPayment();
 
-        $initiatedPayment = $this->paymentsGateway->getPayment($paymentId);
+        $initiatedPayment = $this->paymentsClient->getPayment($paymentId);
         static::assertTrue($initiatedPayment->getState()->isInitiated(), 'payment must be in state cancelled');
 
-        $this->paymentsGateway->cancelPayment($paymentId);
-        $cancelledPayment = $this->paymentsGateway->getPayment($paymentId);
+        $this->paymentsClient->cancelPayment($paymentId);
+        $cancelledPayment = $this->paymentsClient->getPayment($paymentId);
         static::assertTrue($cancelledPayment->getState()->isCancelled(), 'payment must be in state cancelled');
     }
 
@@ -72,15 +75,15 @@ final class PaymentsGatewayTest extends TestCase
 
         $paymentId = $this->createPayment();
 
-        $initiatedPayment = $this->paymentsGateway->getPayment($paymentId);
+        $initiatedPayment = $this->paymentsClient->getPayment($paymentId);
         static::assertTrue($initiatedPayment->getState()->isInitiated());
 
-        $this->paymentsGateway->reservePayment($paymentId, $paymentSourceId, $userId);
-        $reservedPayment = $this->paymentsGateway->getPayment($paymentId);
+        $this->paymentsClient->reservePayment($paymentId, $paymentSourceId, $userId);
+        $reservedPayment = $this->paymentsClient->getPayment($paymentId);
         static::assertTrue($reservedPayment->getState()->isReserved(), 'payment must be in state reserved');
 
-        $this->paymentsGateway->capturePayment($paymentId, Amount::fromFloat(1.00));
-        $capturedPayment = $this->paymentsGateway->getPayment($paymentId);
+        $this->paymentsClient->capturePayment($paymentId, Amount::fromFloat(1.00));
+        $capturedPayment = $this->paymentsClient->getPayment($paymentId);
         static::assertTrue($capturedPayment->getState()->isCaptured(), 'payment must be in state captured');
     }
 }

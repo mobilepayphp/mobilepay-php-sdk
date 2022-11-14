@@ -6,15 +6,16 @@ namespace Jschaedl\MobilePay\AppPayment;
 
 use Jschaedl\Api\Client;
 use Jschaedl\Api\ClientInterface;
+use Jschaedl\MobilePay\AppPayment\Payments\Client as PaymentsClient;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpClient\Psr18Client;
 
 /**
  * @codeCoverageIgnore
  */
-trait GatewayTestTrait
+trait ClientTestTrait
 {
-    private PaymentsGateway $paymentsGateway;
+    private PaymentsClient $paymentsClient;
 
     private function getMobilePayClient(): ClientInterface
     {
@@ -33,7 +34,7 @@ trait GatewayTestTrait
 
     private function createPayment(): Id
     {
-        return $this->paymentsGateway
+        return $this->paymentsClient
             ->createPayment(
                 Amount::fromFloat(1.00),
                 Id::create()->toString(),
