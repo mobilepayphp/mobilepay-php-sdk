@@ -2,16 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment;
+namespace Jschaedl\MobilePay\AppPayment\PaymentPoints;
 
 use Jschaedl\Api\ClientInterface;
-use Jschaedl\MobilePay\AppPayment\PaymentPoints\GetPaymentPointsRequest;
-use Jschaedl\MobilePay\AppPayment\PaymentPoints\GetPaymentPointsResponse;
 
 /**
  * @see \Jschaedl\MobilePay\AppPayment\PaymentPointsGatewayTest
  */
-final class PaymentPointsGateway
+final class Client
 {
     public function __construct(private readonly ClientInterface $client)
     {

@@ -2,23 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment;
+namespace Jschaedl\MobilePay\AppPayment\Payments;
 
 use Jschaedl\Api\ClientInterface;
-use Jschaedl\MobilePay\AppPayment\Payments\CancelPaymentRequest;
-use Jschaedl\MobilePay\AppPayment\Payments\CapturePaymentRequest;
-use Jschaedl\MobilePay\AppPayment\Payments\CreatePaymentRequest;
-use Jschaedl\MobilePay\AppPayment\Payments\CreatePaymentResponse;
-use Jschaedl\MobilePay\AppPayment\Payments\GetPaymentRequest;
-use Jschaedl\MobilePay\AppPayment\Payments\GetPaymentResponse;
-use Jschaedl\MobilePay\AppPayment\Payments\GetPaymentsRequest;
-use Jschaedl\MobilePay\AppPayment\Payments\GetPaymentsResponse;
-use Jschaedl\MobilePay\AppPayment\Payments\ReservePaymentRequest;
+use Jschaedl\MobilePay\AppPayment\Amount;
+use Jschaedl\MobilePay\AppPayment\Id;
 
 /**
- * @see \Jschaedl\MobilePay\AppPayment\PaymentsGatewayTest
+ * @see \Jschaedl\MobilePay\AppPayment\Payments\ClientTest
  */
-final class PaymentsGateway
+final class Client
 {
     private readonly Id $paymentPointId;
 

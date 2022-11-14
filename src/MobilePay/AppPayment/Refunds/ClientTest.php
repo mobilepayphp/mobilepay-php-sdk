@@ -2,12 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment;
+namespace Jschaedl\MobilePay\AppPayment\Refunds;
 
+use Jschaedl\MobilePay\AppPayment\Amount;
+use Jschaedl\MobilePay\AppPayment\ClientTestTrait;
+use Jschaedl\MobilePay\AppPayment\Id;
+use Jschaedl\MobilePay\AppPayment\Payments\Client as PaymentsClient;
+use Jschaedl\MobilePay\AppPayment\Refunds\Client as RefundsClient;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\RefundsGateway
+ * @covers \Jschaedl\MobilePay\AppPayment\Refunds\Client
  * @covers \Jschaedl\Api\Client
  * @covers \Jschaedl\Api\IsGetTrait
  * @covers \Jschaedl\Api\IsPostTrait
@@ -23,7 +28,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Jschaedl\MobilePay\AppPayment\Refunds\GetRefundResponse
  * @covers \Jschaedl\MobilePay\AppPayment\ResponseHandler
  *
- * @uses \Jschaedl\MobilePay\AppPayment\PaymentsGateway
+ * @uses \Jschaedl\MobilePay\AppPayment\Payments\Client
  * @uses \Jschaedl\MobilePay\AppPayment\Payments\CapturePaymentRequest
  * @uses \Jschaedl\MobilePay\AppPayment\Payments\CreatePaymentRequest
  * @uses \Jschaedl\MobilePay\AppPayment\Payments\CreatePaymentResponse
@@ -34,11 +39,11 @@ use PHPUnit\Framework\TestCase;
  *
  * @group e2e
  */
-final class RefundsGatewayTest extends TestCase
+final class ClientTest extends TestCase
 {
-    use GatewayTestTrait;
+    use ClientTestTrait;
 
-    private RefundsGateway $refundsGateway;
+    private Client $refundsClient;
 
     public function setUp(): void
     {
@@ -47,8 +52,8 @@ final class RefundsGatewayTest extends TestCase
             static::fail('No paymentPointId is set, check your MOBILEPAY_PAYMENTPOINT_ID env var.');
         }
 
-        $this->paymentsGateway = new PaymentsGateway($this->getMobilePayClient(), $paymentPointId);
-        $this->refundsGateway = new RefundsGateway($this->getMobilePayClient());
+        $this->paymentsClient = new PaymentsClient($this->getMobilePayClient(), $paymentPointId);
+        $this->refundsClient = new RefundsClient($this->getMobilePayClient());
     }
 
     public function test_refunds(): void
@@ -68,31 +73,31 @@ final class RefundsGatewayTest extends TestCase
 
         $paymentId = $this->createPayment();
 
-        $initiatedPayment = $this->paymentsGateway->getPayment($paymentId);
+        $initiatedPayment = $this->paymentsClient->getPayment($paymentId);
         static::assertTrue($initiatedPayment->getState()->isInitiated());
 
         // todo: sometime mobilepay is not fast enough (payment not captured or reserved yet to make refund)
         // todo: sometime mobilepay is not fast enough (409 code: processing_error; message: We were not able to process your request. Please change idempotency key and try again or contact our support.)
 
-        $this->paymentsGateway->reservePayment($paymentId, $paymentSourceId, $userId);
-        $reservedPayment = $this->paymentsGateway->getPayment($paymentId);
+        $this->paymentsClient->reservePayment($paymentId, $paymentSourceId, $userId);
+        $reservedPayment = $this->paymentsClient->getPayment($paymentId);
         static::assertTrue($reservedPayment->getState()->isReserved());
 
-        $this->paymentsGateway->capturePayment($paymentId, Amount::fromFloat(1.00));
-        $capturedPayment = $this->paymentsGateway->getPayment($paymentId);
+        $this->paymentsClient->capturePayment($paymentId, Amount::fromFloat(1.00));
+        $capturedPayment = $this->paymentsClient->getPayment($paymentId);
         static::assertTrue($capturedPayment->getState()->isCaptured());
 
         $refundIdempotencyKey = Id::create()->toString();
 
-        $partialRefund = $this->refundsGateway->createRefund($paymentId, Amount::fromFloat(0.5), $refundIdempotencyKey, 'reference', 'description');
+        $partialRefund = $this->refundsClient->createRefund($paymentId, Amount::fromFloat(0.5), $refundIdempotencyKey, 'reference', 'description');
         static::assertSame($paymentId->toString(), $partialRefund->getPaymentId()->toString());
         static::assertSame(50, $partialRefund->getRemainingAmount());
 
-        $completeRefund = $this->refundsGateway->createRefund($paymentId, Amount::fromFloat(0.5), $refundIdempotencyKey, 'reference', 'description');
+        $completeRefund = $this->refundsClient->createRefund($paymentId, Amount::fromFloat(0.5), $refundIdempotencyKey, 'reference', 'description');
         static::assertSame($paymentId->toString(), $completeRefund->getPaymentId()->toString());
         static::assertSame(0, $completeRefund->getRemainingAmount());
 
-        $refund = $this->refundsGateway->getRefund($completeRefund->getRefundId());
+        $refund = $this->refundsClient->getRefund($completeRefund->getRefundId());
         static::assertSame($paymentId->toString(), $refund->getPaymentId()->toString());
         static::assertSame(50, $refund->getAmount());
     }

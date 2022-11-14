@@ -2,20 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment;
+namespace Jschaedl\MobilePay\AppPayment\Refunds;
 
 use Jschaedl\Api\ClientInterface;
-use Jschaedl\MobilePay\AppPayment\Refunds\CreateRefundRequest;
-use Jschaedl\MobilePay\AppPayment\Refunds\CreateRefundResponse;
-use Jschaedl\MobilePay\AppPayment\Refunds\GetRefundRequest;
-use Jschaedl\MobilePay\AppPayment\Refunds\GetRefundResponse;
-use Jschaedl\MobilePay\AppPayment\Refunds\GetRefundsRequest;
-use Jschaedl\MobilePay\AppPayment\Refunds\GetRefundsResponse;
+use Jschaedl\MobilePay\AppPayment\Amount;
+use Jschaedl\MobilePay\AppPayment\Id;
 
 /**
- * @see \Jschaedl\MobilePay\AppPayment\RefundsGatewayTest
+ * @see \Jschaedl\MobilePay\AppPayment\Refunds\ClientTest
  */
-final class RefundsGateway
+final class Client
 {
     public function __construct(private readonly ClientInterface $client)
     {
