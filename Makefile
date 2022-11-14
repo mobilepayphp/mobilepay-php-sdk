@@ -24,6 +24,10 @@ tests-unit:
 tests-integration:
 	XDEBUG_MODE=off $(PARATEST_BIN) --group=integration
 
+.PHONY: tests-e2e
+tests-e2e:
+	XDEBUG_MODE=off $(PARATEST_BIN) --group=e2e
+
 .PHONY: tests-coverage
 tests-coverage:
 	XDEBUG_MODE=coverage $(PHPUNIT_BIN) --coverage-html coverage
