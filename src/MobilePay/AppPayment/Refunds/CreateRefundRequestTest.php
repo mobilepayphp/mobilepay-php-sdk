@@ -24,7 +24,7 @@ final class CreateRefundRequestTest extends TestCase
         $request = new CreateRefundRequest(
             Id::fromString('98cb60fe-c1a2-4f4f-8c0a-c6ed1e4692a2'),
             Amount::fromFloat(100.00),
-            'idempotencyKey',
+            Id::fromString('93c132fc-97a1-41cb-9d65-25d0f3a5d78d'),
             'reference',
             'description'
         );
@@ -32,7 +32,7 @@ final class CreateRefundRequestTest extends TestCase
         $expectedPayload = [
             'paymentId' => '98cb60fe-c1a2-4f4f-8c0a-c6ed1e4692a2',
             'amount' => 10000,
-            'idempotencyKey' => 'idempotencyKey',
+            'idempotencyKey' => '93c132fc-97a1-41cb-9d65-25d0f3a5d78d',
             'reference' => 'reference',
             'description' => 'description',
         ];

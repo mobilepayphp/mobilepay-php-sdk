@@ -30,7 +30,7 @@ final class Client
         $this->client->request(new CapturePaymentRequest($paymentId, $amount));
     }
 
-    public function createPayment(Amount $amount, string $idempotencyKey, string $redirectUri, string $reference, string $description = ''): CreatePaymentResponse
+    public function createPayment(Amount $amount, Id $idempotencyKey, string $redirectUri, string $reference, string $description = ''): CreatePaymentResponse
     {
         return CreatePaymentResponse::fromResponse(
             $this->client->request(

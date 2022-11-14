@@ -21,7 +21,7 @@ final class CreateRefundRequest implements RequestInterface
     public function __construct(
         private readonly Id $paymentId,
         Amount $amount,
-        private readonly string $idempotencyKey,
+        private readonly Id $idempotencyKey,
         private readonly string $reference,
         string $description = null
     ) {
@@ -42,7 +42,7 @@ final class CreateRefundRequest implements RequestInterface
         return [
             'paymentId' => $this->paymentId->toString(),
             'amount' => $this->amount,
-            'idempotencyKey' => $this->idempotencyKey,
+            'idempotencyKey' => $this->idempotencyKey->toString(),
             'reference' => $this->reference,
             'description' => $this->description,
         ];

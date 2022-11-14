@@ -87,7 +87,7 @@ final class ClientTest extends TestCase
         $capturedPayment = $this->paymentsClient->getPayment($paymentId);
         static::assertTrue($capturedPayment->getState()->isCaptured());
 
-        $refundIdempotencyKey = Id::create()->toString();
+        $refundIdempotencyKey = Id::create();
 
         $partialRefund = $this->refundsClient->createRefund($paymentId, Amount::fromFloat(0.5), $refundIdempotencyKey, 'reference', 'description');
         static::assertSame($paymentId->toString(), $partialRefund->getPaymentId()->toString());
