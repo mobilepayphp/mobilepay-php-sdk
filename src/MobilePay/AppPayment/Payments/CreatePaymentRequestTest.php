@@ -23,7 +23,7 @@ final class CreatePaymentRequestTest extends TestCase
     {
         $createPaymentRequest = new CreatePaymentRequest(
             Amount::fromFloat(100.00),
-            'idempotencyKey',
+            Id::fromString('e2112ad1-5c81-45ae-ba2b-d0aa5948c37b'),
             Id::fromString('801fc9f2-8f0e-4f5e-bb8e-8a50418dffe7'),
             'redirectUri',
             'reference',
@@ -32,7 +32,7 @@ final class CreatePaymentRequestTest extends TestCase
 
         $expectedResponsePayload = [
             'amount' => 10000,
-            'idempotencyKey' => 'idempotencyKey',
+            'idempotencyKey' => 'e2112ad1-5c81-45ae-ba2b-d0aa5948c37b',
             'paymentPointId' => '801fc9f2-8f0e-4f5e-bb8e-8a50418dffe7',
             'redirectUri' => 'redirectUri',
             'reference' => 'reference',

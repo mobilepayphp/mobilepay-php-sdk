@@ -37,7 +37,7 @@ trait ClientTestTrait
         return $this->paymentsClient
             ->createPayment(
                 Amount::fromFloat(1.00),
-                Id::create()->toString(),
+                Id::create(),
                 'https://redirect',
                 'reference',
                 'description'

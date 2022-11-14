@@ -21,7 +21,7 @@ final class CreatePaymentRequest implements RequestInterface
 
     public function __construct(
         Amount $amount,
-        private readonly string $idempotencyKey,
+        private readonly Id $idempotencyKey,
         private readonly Id $paymentPointId,
         private readonly string $redirectUri,
         private readonly string $reference,
@@ -43,7 +43,7 @@ final class CreatePaymentRequest implements RequestInterface
     {
         return [
             'amount' => $this->amount,
-            'idempotencyKey' => $this->idempotencyKey,
+            'idempotencyKey' => $this->idempotencyKey->toString(),
             'paymentPointId' => $this->paymentPointId->toString(),
             'redirectUri' => $this->redirectUri,
             'reference' => $this->reference,

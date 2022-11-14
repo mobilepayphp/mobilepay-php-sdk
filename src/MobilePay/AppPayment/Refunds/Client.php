@@ -35,7 +35,7 @@ final class Client
         );
     }
 
-    public function createRefund(Id $paymentId, Amount $amount, string $idempotencyKey, string $reference, string $description = ''): CreateRefundResponse
+    public function createRefund(Id $paymentId, Amount $amount, Id $idempotencyKey, string $reference, string $description = ''): CreateRefundResponse
     {
         return CreateRefundResponse::fromResponse(
             $this->client->request(
