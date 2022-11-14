@@ -23,11 +23,6 @@
             <directory suffix="Test.php">src</directory>
         </testsuite>
     </testsuites>
-    <groups>
-        <exclude>
-            <group>e2e</group>
-        </exclude>
-    </groups>
     <php>
         <env name="MOBILEPAY_API_KEY" value=""/>
         <env name="MOBILEPAY_PAYMENTPOINT_ID" value=""/>
