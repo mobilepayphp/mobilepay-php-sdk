@@ -16,6 +16,10 @@ trait RetryTrait
         $attempt = 0;
         $try = true;
 
+        if ($maxRetries < 0) {
+            throw new \RuntimeException('$maxRetries cannot be negative');
+        }
+
         while ($try) {
             $result = null;
             $exception = null;
@@ -24,7 +28,7 @@ trait RetryTrait
 
             try {
                 /** @var ResponseInterface $result */
-                $result = call_user_func($callback);
+                $result = $callback();
                 if (!$result instanceof ResponseInterface) {
                     throw new \RuntimeException('return-type of $callback should be of type ResponseInterface');
                 }
@@ -46,11 +50,23 @@ trait RetryTrait
 
     private function wait(int $attempt, bool $addJitter): void
     {
-        if ($attempt > 0) {
-            $waitTime = 1 == $attempt ? 100 : 2 ** $attempt * 100; // exponential strategy
-            $waitTime = $addJitter ? random_int(0, $waitTime) : $waitTime; // adding randomness
-            // wait
-            usleep($waitTime * 1000);
+        if ($attempt <= 0) {
+            return;
         }
+
+        // exponential strategy
+        $waitTime = (1 + 2 ** $attempt) * 100;
+
+        if ($addJitter) {
+            // jitter by +/- 25%
+            $waitTime *= random_int(75, 125) / 100;
+        }
+
+        usleep((int) $waitTime * static::getWaitTimeFactor());
+    }
+
+    private function getWaitTimeFactor(): int
+    {
+        return 500;
     }
 }
