@@ -27,7 +27,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Jschaedl\MobilePay\AppPayment\Payments\ReservePaymentRequest
  * @covers \Jschaedl\MobilePay\AppPayment\ResponseHandler
  *
- * @group integration
+ * @group e2e
  */
 final class PaymentsGatewayTest extends TestCase
 {
@@ -36,6 +36,10 @@ final class PaymentsGatewayTest extends TestCase
     public function setUp(): void
     {
         $paymentPointId = (string) getenv('MOBILEPAY_PAYMENTPOINT_ID');
+        if ('' === $paymentPointId) {
+            static::fail('No paymentPointId is set, check your MOBILEPAY_PAYMENTPOINT_ID env var.');
+        }
+
         $this->paymentsGateway = new PaymentsGateway($this->getMobilePayClient(), $paymentPointId);
     }
 
@@ -53,13 +57,23 @@ final class PaymentsGatewayTest extends TestCase
 
     public function test_capturePayment(): void
     {
+        $paymentSourceIdString = (string) getenv('MOBILEPAY_PAYMENT_SOURCE_ID');
+        if ('' === $paymentSourceIdString) {
+            static::fail('No paymentSourceId is set, check your MOBILEPAY_PAYMENT_SOURCE_ID env var.');
+        }
+
+        $userIdString = (string) getenv('MOBILEPAY_USER_ID');
+        if ('' === $userIdString) {
+            static::fail('No userId is set, check your MOBILEPAY_USER_ID env var.');
+        }
+
+        $paymentSourceId = Id::fromString($paymentSourceIdString);
+        $userId = Id::fromString($userIdString);
+
         $paymentId = $this->createPayment();
 
         $initiatedPayment = $this->paymentsGateway->getPayment($paymentId);
         static::assertTrue($initiatedPayment->getState()->isInitiated());
-
-        $paymentSourceId = Id::fromString((string) getenv('MOBILEPAY_PAYMENT_SOURCE_ID'));
-        $userId = Id::fromString((string) getenv('MOBILEPAY_USER_ID'));
 
         $this->paymentsGateway->reservePayment($paymentId, $paymentSourceId, $userId);
         $reservedPayment = $this->paymentsGateway->getPayment($paymentId);
