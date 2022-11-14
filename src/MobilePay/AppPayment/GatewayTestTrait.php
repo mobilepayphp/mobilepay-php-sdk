@@ -21,6 +21,10 @@ trait GatewayTestTrait
         $apiHost = 'https://api.sandbox.mobilepay.dk';
         $apiKey = (string) getenv('MOBILEPAY_API_KEY');
 
+        if ('' === $apiKey) {
+            static::markTestSkipped('no api key is set, check your MOBILEPAY_API_KEY envvar');
+        }
+
         $httpClient = HttpClient::create();
         $psr18HttpClient = new Psr18Client($httpClient);
 
@@ -37,7 +41,6 @@ trait GatewayTestTrait
                 'reference',
                 'description'
             )
-            ->getPaymentId()
-        ;
+            ->getPaymentId();
     }
 }

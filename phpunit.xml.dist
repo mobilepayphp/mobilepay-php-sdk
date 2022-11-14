@@ -24,9 +24,9 @@
         </testsuite>
     </testsuites>
     <php>
-        <env name="MOBILEPAY_API_KEY" value="..."/>
-        <env name="MOBILEPAY_PAYMENTPOINT_ID" value="..."/>
-        <env name="MOBILEPAY_PAYMENT_SOURCE_ID" value="..."/>
-        <env name="MOBILEPAY_USER_ID" value="..."/>
+        <env name="MOBILEPAY_API_KEY" value=""/>
+        <env name="MOBILEPAY_PAYMENTPOINT_ID" value=""/>
+        <env name="MOBILEPAY_PAYMENT_SOURCE_ID" value=""/>
+        <env name="MOBILEPAY_USER_ID" value=""/>
     </php>
 </phpunit>
