@@ -57,8 +57,10 @@ final class RefundsGatewayTest extends TestCase
         // todo: sometime mobilepay is not fast enough (payment not captured or reserved yet to make refund)
         // todo: sometime mobilepay is not fast enough (409 code: processing_error; message: We were not able to process your request. Please change idempotency key and try again or contact our support.)
 
-        // todo: handle paymentSourceId and userId as configuration
-        $this->paymentsGateway->reservePayment($paymentId, Id::fromString('e69f44f6-149b-4e09-b80e-e9dc7f079237'), Id::fromString('589d4ae6-e3bb-4c8a-9097-61ae22cdc1d1'));
+        $paymentSourceId = Id::fromString((string) getenv('MOBILEPAY_PAYMENT_SOURCE_ID'));
+        $userId = Id::fromString((string) getenv('MOBILEPAY_USER_ID'));
+
+        $this->paymentsGateway->reservePayment($paymentId, $paymentSourceId, $userId);
         $reservedPayment = $this->paymentsGateway->getPayment($paymentId);
         static::assertTrue($reservedPayment->getState()->isReserved());
 
