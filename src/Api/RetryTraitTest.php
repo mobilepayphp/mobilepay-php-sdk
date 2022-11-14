@@ -54,6 +54,11 @@ final class RetryTraitTest extends TestCase
                     true
                 );
             }
+
+            private function backupTimeBaseFactor(): int
+            {
+                return 1;
+            }
         };
 
         static::assertEquals(200, $testRetry->run()->getStatusCode());
@@ -102,6 +107,27 @@ final class RetryTraitTest extends TestCase
 
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('failure');
+
+        $testRetry->run();
+    }
+
+    public function test_retry_throws_exception_on_negative_attempts(): void
+    {
+        $testRetry = new class() {
+            use RetryTrait;
+
+            public function run(): ResponseInterface
+            {
+                return $this->retry(
+                    fn (): ResponseInterface => new Response(200, ['success']),
+                    -1,
+                    true
+                );
+            }
+        };
+
+        $this->expectException(\RuntimeException::class);
+        $this->expectExceptionMessage('negative');
 
         $testRetry->run();
     }
