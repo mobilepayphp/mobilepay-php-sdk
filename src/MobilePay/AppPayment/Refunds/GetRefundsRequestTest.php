@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Refunds;
+namespace MobilePayPhp\MobilePay\AppPayment\Refunds;
 
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\Refunds\GetRefundsRequest
- * @covers \Jschaedl\Api\IsGetTrait
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\GetRefundsRequest
+ * @covers \MobilePayPhp\Api\IsGetTrait
  *
  * @group unit
  */

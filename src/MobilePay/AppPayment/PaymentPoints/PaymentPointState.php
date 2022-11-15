@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\PaymentPoints;
+namespace MobilePayPhp\MobilePay\AppPayment\PaymentPoints;
 
-use Jschaedl\MobilePay\AppPayment\Exception\InvalidArgumentException;
+use MobilePayPhp\MobilePay\AppPayment\Exception\InvalidArgumentException;
 
 /**
- * @see \Jschaedl\MobilePay\AppPayment\PaymentPoints\PaymentPointStateTest
+ * @see \MobilePayPhp\MobilePay\AppPayment\PaymentPoints\PaymentPointStateTest
  */
 final class PaymentPointState
 {

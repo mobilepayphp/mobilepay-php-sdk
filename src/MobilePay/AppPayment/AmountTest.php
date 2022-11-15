@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment;
+namespace MobilePayPhp\MobilePay\AppPayment;
 
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\Amount
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Amount
  *
  * @group unit
  */

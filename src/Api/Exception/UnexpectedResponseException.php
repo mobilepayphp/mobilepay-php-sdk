@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\Api\Exception;
+namespace MobilePayPhp\Api\Exception;
 
 final class UnexpectedResponseException extends ResponseException
 {

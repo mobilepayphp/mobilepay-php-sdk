@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment;
+namespace MobilePayPhp\MobilePay\AppPayment;
 
-use Jschaedl\Api\Exception\ClientException;
-use Jschaedl\Api\Exception\ServerException;
-use Jschaedl\Api\Exception\UnexpectedResponseException;
-use Jschaedl\MobilePay\AppPayment\Exception\MobilePayClientException;
+use MobilePayPhp\Api\Exception\ClientException;
+use MobilePayPhp\Api\Exception\ServerException;
+use MobilePayPhp\Api\Exception\UnexpectedResponseException;
+use MobilePayPhp\MobilePay\AppPayment\Exception\MobilePayClientException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\ResponseHandler
- * @covers \Jschaedl\Api\Response
- * @covers \Jschaedl\Api\Exception\UnexpectedResponseException
- * @covers \Jschaedl\Api\Exception\ClientException
- * @covers \Jschaedl\Api\Exception\ServerException
- * @covers \Jschaedl\Api\Exception\ResponseException
- * @covers \Jschaedl\MobilePay\AppPayment\Exception\MobilePayClientException
+ * @covers \MobilePayPhp\MobilePay\AppPayment\ResponseHandler
+ * @covers \MobilePayPhp\Api\Response
+ * @covers \MobilePayPhp\Api\Exception\UnexpectedResponseException
+ * @covers \MobilePayPhp\Api\Exception\ClientException
+ * @covers \MobilePayPhp\Api\Exception\ServerException
+ * @covers \MobilePayPhp\Api\Exception\ResponseException
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Exception\MobilePayClientException
  *
- * @uses \Jschaedl\Api\Validation\ValidationRule
+ * @uses \MobilePayPhp\Api\Validation\ValidationRule
  */
 final class ResponseHandlerTest extends TestCase
 {

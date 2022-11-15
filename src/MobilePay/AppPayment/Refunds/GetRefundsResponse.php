@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Refunds;
+namespace MobilePayPhp\MobilePay\AppPayment\Refunds;
 
-use Jschaedl\Api\ResponseInterface;
-use Jschaedl\Api\Validation\ValidationRule;
-use Jschaedl\Api\Validation\ValidationTrait;
+use MobilePayPhp\Api\ResponseInterface;
+use MobilePayPhp\Api\Validation\ValidationRule;
+use MobilePayPhp\Api\Validation\ValidationTrait;
 
 /**
- * @see \Jschaedl\MobilePay\AppPayment\Refunds\GetRefundsResponseTest
+ * @see \MobilePayPhp\MobilePay\AppPayment\Refunds\GetRefundsResponseTest
  */
 final class GetRefundsResponse
 {

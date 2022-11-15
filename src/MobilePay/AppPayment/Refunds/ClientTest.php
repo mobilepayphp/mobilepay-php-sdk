@@ -2,40 +2,40 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Refunds;
+namespace MobilePayPhp\MobilePay\AppPayment\Refunds;
 
-use Jschaedl\MobilePay\AppPayment\Amount;
-use Jschaedl\MobilePay\AppPayment\ClientTestTrait;
-use Jschaedl\MobilePay\AppPayment\Id;
-use Jschaedl\MobilePay\AppPayment\Payments\Client as PaymentsClient;
-use Jschaedl\MobilePay\AppPayment\Refunds\Client as RefundsClient;
+use MobilePayPhp\MobilePay\AppPayment\Amount;
+use MobilePayPhp\MobilePay\AppPayment\ClientTestTrait;
+use MobilePayPhp\MobilePay\AppPayment\Id;
+use MobilePayPhp\MobilePay\AppPayment\Payments\Client as PaymentsClient;
+use MobilePayPhp\MobilePay\AppPayment\Refunds\Client as RefundsClient;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\Refunds\Client
- * @covers \Jschaedl\Api\Client
- * @covers \Jschaedl\Api\IsGetTrait
- * @covers \Jschaedl\Api\IsPostTrait
- * @covers \Jschaedl\Api\Response
- * @covers \Jschaedl\Api\Validation\ValidationRule
- * @covers \Jschaedl\Api\Validation\ValidationTrait
- * @covers \Jschaedl\MobilePay\AppPayment\Amount
- * @covers \Jschaedl\MobilePay\AppPayment\DateTimeFactory
- * @covers \Jschaedl\MobilePay\AppPayment\Id
- * @covers \Jschaedl\MobilePay\AppPayment\Refunds\CreateRefundRequest
- * @covers \Jschaedl\MobilePay\AppPayment\Refunds\CreateRefundResponse
- * @covers \Jschaedl\MobilePay\AppPayment\Refunds\GetRefundRequest
- * @covers \Jschaedl\MobilePay\AppPayment\Refunds\GetRefundResponse
- * @covers \Jschaedl\MobilePay\AppPayment\ResponseHandler
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\Client
+ * @covers \MobilePayPhp\Api\Client
+ * @covers \MobilePayPhp\Api\IsGetTrait
+ * @covers \MobilePayPhp\Api\IsPostTrait
+ * @covers \MobilePayPhp\Api\Response
+ * @covers \MobilePayPhp\Api\Validation\ValidationRule
+ * @covers \MobilePayPhp\Api\Validation\ValidationTrait
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Amount
+ * @covers \MobilePayPhp\MobilePay\AppPayment\DateTimeFactory
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Id
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\CreateRefundRequest
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\CreateRefundResponse
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\GetRefundRequest
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\GetRefundResponse
+ * @covers \MobilePayPhp\MobilePay\AppPayment\ResponseHandler
  *
- * @uses \Jschaedl\MobilePay\AppPayment\Payments\Client
- * @uses \Jschaedl\MobilePay\AppPayment\Payments\CapturePaymentRequest
- * @uses \Jschaedl\MobilePay\AppPayment\Payments\CreatePaymentRequest
- * @uses \Jschaedl\MobilePay\AppPayment\Payments\CreatePaymentResponse
- * @uses \Jschaedl\MobilePay\AppPayment\Payments\GetPaymentRequest
- * @uses \Jschaedl\MobilePay\AppPayment\Payments\GetPaymentResponse
- * @uses \Jschaedl\MobilePay\AppPayment\Payments\PaymentState
- * @uses \Jschaedl\MobilePay\AppPayment\Payments\ReservePaymentRequest
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Payments\Client
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Payments\CapturePaymentRequest
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Payments\CreatePaymentRequest
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Payments\CreatePaymentResponse
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Payments\GetPaymentRequest
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Payments\GetPaymentResponse
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Payments\PaymentState
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Payments\ReservePaymentRequest
  *
  * @group e2e
  */

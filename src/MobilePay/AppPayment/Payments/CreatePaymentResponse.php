@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Payments;
+namespace MobilePayPhp\MobilePay\AppPayment\Payments;
 
-use Jschaedl\Api\ResponseInterface;
-use Jschaedl\Api\Validation\ValidationRule;
-use Jschaedl\Api\Validation\ValidationTrait;
-use Jschaedl\MobilePay\AppPayment\Id;
+use MobilePayPhp\Api\ResponseInterface;
+use MobilePayPhp\Api\Validation\ValidationRule;
+use MobilePayPhp\Api\Validation\ValidationTrait;
+use MobilePayPhp\MobilePay\AppPayment\Id;
 
 /**
- * @see \Jschaedl\MobilePay\AppPayment\Payments\CreatePaymentResponseTest
+ * @see \MobilePayPhp\MobilePay\AppPayment\Payments\CreatePaymentResponseTest
  */
 final class CreatePaymentResponse
 {

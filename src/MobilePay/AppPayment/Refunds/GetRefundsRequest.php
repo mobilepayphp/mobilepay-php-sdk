@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Refunds;
+namespace MobilePayPhp\MobilePay\AppPayment\Refunds;
 
-use Jschaedl\Api\IsGetTrait;
-use Jschaedl\Api\RequestInterface;
+use MobilePayPhp\Api\IsGetTrait;
+use MobilePayPhp\Api\RequestInterface;
 
 /**
- * @see \Jschaedl\MobilePay\AppPayment\Refunds\GetRefundsRequestTest
+ * @see \MobilePayPhp\MobilePay\AppPayment\Refunds\GetRefundsRequestTest
  */
 final class GetRefundsRequest implements RequestInterface
 {

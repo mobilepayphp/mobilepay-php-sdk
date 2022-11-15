@@ -1,7 +1,7 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Parameter \\#2 \\$body of method Jschaedl\\\\Api\\\\ResponseHandlerInterface\\:\\:handle\\(\\) expects array, mixed given\\.$#"
+			message: "#^Parameter \\#2 \\$body of method MobilePayPhp\\\\Api\\\\ResponseHandlerInterface\\:\\:handle\\(\\) expects array, mixed given\\.$#"
 			count: 1
 			path: ../src/Api/Client.php
 
@@ -21,7 +21,7 @@ parameters:
 			path: ../src/MobilePay/AppPayment/Payments/GetPaymentsResponse.php
 
 		-
-			message: "#^Parameter \\#1 \\$payload of class Jschaedl\\\\MobilePay\\\\AppPayment\\\\Payments\\\\GetPaymentsResponse constructor expects array\\<string, int\\|string\\>, array\\<string, array\\<int, array\\<string, int\\|string\\>\\>\\|int\\> given\\.$#"
+			message: "#^Parameter \\#1 \\$payload of class MobilePayPhp\\\\MobilePay\\\\AppPayment\\\\Payments\\\\GetPaymentsResponse constructor expects array\\<string, int\\|string\\>, array\\<string, array\\<int, array\\<string, int\\|string\\>\\>\\|int\\> given\\.$#"
 			count: 1
 			path: ../src/MobilePay/AppPayment/Payments/GetPaymentsResponseTest.php
 
@@ -31,6 +31,6 @@ parameters:
 			path: ../src/MobilePay/AppPayment/Refunds/GetRefundsResponse.php
 
 		-
-			message: "#^Parameter \\#1 \\$payload of class Jschaedl\\\\MobilePay\\\\AppPayment\\\\Refunds\\\\GetRefundsResponse constructor expects array\\<string, int\\|string\\>, array\\<string, array\\<int, array\\<string, int\\|string\\>\\>\\|int\\> given\\.$#"
+			message: "#^Parameter \\#1 \\$payload of class MobilePayPhp\\\\MobilePay\\\\AppPayment\\\\Refunds\\\\GetRefundsResponse constructor expects array\\<string, int\\|string\\>, array\\<string, array\\<int, array\\<string, int\\|string\\>\\>\\|int\\> given\\.$#"
 			count: 1
 			path: ../src/MobilePay/AppPayment/Refunds/GetRefundsResponseTest.php

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Payments;
+namespace MobilePayPhp\MobilePay\AppPayment\Payments;
 
-use Jschaedl\Api\ClientInterface;
-use Jschaedl\MobilePay\AppPayment\Amount;
-use Jschaedl\MobilePay\AppPayment\Id;
+use MobilePayPhp\Api\ClientInterface;
+use MobilePayPhp\MobilePay\AppPayment\Amount;
+use MobilePayPhp\MobilePay\AppPayment\Id;
 
 /**
- * @see \Jschaedl\MobilePay\AppPayment\Payments\ClientTest
+ * @see \MobilePayPhp\MobilePay\AppPayment\Payments\ClientTest
  */
 final class Client
 {

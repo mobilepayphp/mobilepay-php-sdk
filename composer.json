@@ -20,8 +20,8 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"Jschaedl\\MobilePay\\": "src/MobilePay",
-			"Jschaedl\\Api\\": "src/Api"
+			"MobilePayPhp\\MobilePay\\": "src/MobilePay",
+			"MobilePayPhp\\Api\\": "src/Api"
 		}
 	},
 	"config": {

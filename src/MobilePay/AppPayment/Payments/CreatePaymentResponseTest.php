@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Payments;
+namespace MobilePayPhp\MobilePay\AppPayment\Payments;
 
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\Payments\CreatePaymentResponse
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\CreatePaymentResponse
  *
- * @uses \Jschaedl\Api\Validation\ValidationRule
- * @uses \Jschaedl\MobilePay\AppPayment\Id
+ * @uses \MobilePayPhp\Api\Validation\ValidationRule
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Id
  *
  * @group unit
  */

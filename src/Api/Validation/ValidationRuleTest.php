@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\Api\Validation;
+namespace MobilePayPhp\Api\Validation;
 
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\Api\Validation\ValidationRule
+ * @covers \MobilePayPhp\Api\Validation\ValidationRule
  *
- * @uses \Jschaedl\Api\Validation\ValidationRule
+ * @uses \MobilePayPhp\Api\Validation\ValidationRule
  *
  * @group unit
  */

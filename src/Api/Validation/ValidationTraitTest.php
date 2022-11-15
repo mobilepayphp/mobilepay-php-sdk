@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\Api\Validation;
+namespace MobilePayPhp\Api\Validation;
 
-use Jschaedl\Api\Validation\Exception\InvalidArgumentException;
+use MobilePayPhp\Api\Validation\Exception\InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\Api\Validation\ValidationTrait
- * @covers \Jschaedl\Api\Validation\Exception\InvalidArgumentException
+ * @covers \MobilePayPhp\Api\Validation\ValidationTrait
+ * @covers \MobilePayPhp\Api\Validation\Exception\InvalidArgumentException
  *
- * @uses \Jschaedl\Api\Validation\ValidationRule
+ * @uses \MobilePayPhp\Api\Validation\ValidationRule
  *
  * @group unit
  */

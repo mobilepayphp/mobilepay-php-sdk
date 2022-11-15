@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Payments;
+namespace MobilePayPhp\MobilePay\AppPayment\Payments;
 
-use Jschaedl\MobilePay\AppPayment\Exception\InvalidArgumentException;
+use MobilePayPhp\MobilePay\AppPayment\Exception\InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\Payments\PaymentState
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\PaymentState
  *
  * @group unit
  */

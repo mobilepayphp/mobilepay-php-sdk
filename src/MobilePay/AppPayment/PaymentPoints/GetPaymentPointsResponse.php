@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\PaymentPoints;
+namespace MobilePayPhp\MobilePay\AppPayment\PaymentPoints;
 
-use Jschaedl\Api\ResponseInterface;
-use Jschaedl\Api\Validation\ValidationRule;
-use Jschaedl\Api\Validation\ValidationTrait;
+use MobilePayPhp\Api\ResponseInterface;
+use MobilePayPhp\Api\Validation\ValidationRule;
+use MobilePayPhp\Api\Validation\ValidationTrait;
 
 /**
- * @see \Jschaedl\MobilePay\AppPayment\PaymentPoints\GetPaymentPointsResponseTest
+ * @see \MobilePayPhp\MobilePay\AppPayment\PaymentPoints\GetPaymentPointsResponseTest
  */
 final class GetPaymentPointsResponse
 {

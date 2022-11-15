@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\PaymentPoints;
+namespace MobilePayPhp\MobilePay\AppPayment\PaymentPoints;
 
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\PaymentPoints\GetPaymentPointsRequest
- * @covers \Jschaedl\Api\IsGetTrait
+ * @covers \MobilePayPhp\MobilePay\AppPayment\PaymentPoints\GetPaymentPointsRequest
+ * @covers \MobilePayPhp\Api\IsGetTrait
  *
- * @uses \Jschaedl\MobilePay\AppPayment\Id
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Id
  *
  * @group unit
  */

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\Api;
+namespace MobilePayPhp\Api;
 
-use Jschaedl\Api\Exception\ServerException;
+use MobilePayPhp\Api\Exception\ServerException;
 
 trait RetryTrait
 {

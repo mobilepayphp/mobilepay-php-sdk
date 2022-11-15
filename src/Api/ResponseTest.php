@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\Api;
+namespace MobilePayPhp\Api;
 
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\Api\Response
+ * @covers \MobilePayPhp\Api\Response
  *
  * @group unit
  */
