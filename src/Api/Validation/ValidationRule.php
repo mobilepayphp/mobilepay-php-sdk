@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\Api\Validation;
+namespace MobilePayPhp\Api\Validation;
 
 /**
- * @see \Jschaedl\Api\Validation\ValidationRuleTest
+ * @see \MobilePayPhp\Api\Validation\ValidationRuleTest
  */
 final class ValidationRule
 {

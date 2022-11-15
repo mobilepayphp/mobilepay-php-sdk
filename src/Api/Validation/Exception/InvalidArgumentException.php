@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\Api\Validation\Exception;
+namespace MobilePayPhp\Api\Validation\Exception;
 
 final class InvalidArgumentException extends \InvalidArgumentException
 {

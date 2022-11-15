@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment;
+namespace MobilePayPhp\MobilePay\AppPayment;
 
-use Jschaedl\Api\Client;
-use Jschaedl\Api\ClientInterface;
-use Jschaedl\MobilePay\AppPayment\Payments\Client as PaymentsClient;
+use MobilePayPhp\Api\Client;
+use MobilePayPhp\Api\ClientInterface;
+use MobilePayPhp\MobilePay\AppPayment\Payments\Client as PaymentsClient;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpClient\Psr18Client;
 

@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment;
+namespace MobilePayPhp\MobilePay\AppPayment;
 
-use Jschaedl\Api\Exception\ClientException;
-use Jschaedl\Api\Exception\ServerException;
-use Jschaedl\Api\Exception\UnexpectedResponseException;
-use Jschaedl\Api\Response;
-use Jschaedl\Api\ResponseHandlerInterface;
-use Jschaedl\MobilePay\AppPayment\Exception\MobilePayClientException;
+use MobilePayPhp\Api\Exception\ClientException;
+use MobilePayPhp\Api\Exception\ServerException;
+use MobilePayPhp\Api\Exception\UnexpectedResponseException;
+use MobilePayPhp\Api\Response;
+use MobilePayPhp\Api\ResponseHandlerInterface;
+use MobilePayPhp\MobilePay\AppPayment\Exception\MobilePayClientException;
 
 /**
- * @see \Jschaedl\MobilePay\AppPayment\ResponseHandlerTest
+ * @see \MobilePayPhp\MobilePay\AppPayment\ResponseHandlerTest
  */
 final class ResponseHandler implements ResponseHandlerInterface
 {

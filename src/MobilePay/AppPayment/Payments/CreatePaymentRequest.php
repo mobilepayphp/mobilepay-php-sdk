@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Payments;
+namespace MobilePayPhp\MobilePay\AppPayment\Payments;
 
-use Jschaedl\Api\IsPostTrait;
-use Jschaedl\Api\RequestInterface;
-use Jschaedl\MobilePay\AppPayment\Amount;
-use Jschaedl\MobilePay\AppPayment\Id;
+use MobilePayPhp\Api\IsPostTrait;
+use MobilePayPhp\Api\RequestInterface;
+use MobilePayPhp\MobilePay\AppPayment\Amount;
+use MobilePayPhp\MobilePay\AppPayment\Id;
 
 /**
- * @see \Jschaedl\MobilePay\AppPayment\Payments\CreatePaymentRequestTest
+ * @see \MobilePayPhp\MobilePay\AppPayment\Payments\CreatePaymentRequestTest
  */
 final class CreatePaymentRequest implements RequestInterface
 {

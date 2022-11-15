@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment;
+namespace MobilePayPhp\MobilePay\AppPayment;
 
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
 /**
- * @see \Jschaedl\MobilePay\AppPayment\IdTest
+ * @see \MobilePayPhp\MobilePay\AppPayment\IdTest
  */
 final class Id
 {

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\Api\Validation;
+namespace MobilePayPhp\Api\Validation;
 
-use Jschaedl\Api\Validation\Exception\InvalidArgumentException;
+use MobilePayPhp\Api\Validation\Exception\InvalidArgumentException;
 
 /**
- * @see \Jschaedl\Api\Validation\ValidationTraitTest
+ * @see \MobilePayPhp\Api\Validation\ValidationTraitTest
  */
 trait ValidationTrait
 {

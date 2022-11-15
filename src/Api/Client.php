@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\Api;
+namespace MobilePayPhp\Api;
 
 use Psr\Http\Client\ClientInterface as PsrClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;

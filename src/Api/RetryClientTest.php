@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\Api;
+namespace MobilePayPhp\Api;
 
-use Jschaedl\Api\Exception\ServerException;
+use MobilePayPhp\Api\Exception\ServerException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\Api\RetryClient
+ * @covers \MobilePayPhp\Api\RetryClient
  *
- * @uses \Jschaedl\Api\Exception\ResponseException
- * @uses \Jschaedl\Api\Exception\ServerException
+ * @uses \MobilePayPhp\Api\Exception\ResponseException
+ * @uses \MobilePayPhp\Api\Exception\ServerException
  *
  * @group integration
  */

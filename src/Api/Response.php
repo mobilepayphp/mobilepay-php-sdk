@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\Api;
+namespace MobilePayPhp\Api;
 
 /**
- * @see \Jschaedl\Api\ResponseTest
+ * @see \MobilePayPhp\Api\ResponseTest
  */
 final class Response implements ResponseInterface
 {

@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\PaymentPoints;
+namespace MobilePayPhp\MobilePay\AppPayment\PaymentPoints;
 
-use Jschaedl\Api\Response;
+use MobilePayPhp\Api\Response;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\PaymentPoints\GetPaymentPointsResponse
+ * @covers \MobilePayPhp\MobilePay\AppPayment\PaymentPoints\GetPaymentPointsResponse
  *
- * @uses \Jschaedl\Api\Response
- * @uses \Jschaedl\Api\Validation\ValidationRule
- * @uses \Jschaedl\MobilePay\AppPayment\Id
- * @uses \Jschaedl\MobilePay\AppPayment\PaymentPoints\GetPaymentPointResponse
- * @uses \Jschaedl\MobilePay\AppPayment\PaymentPoints\PaymentPointState
+ * @uses \MobilePayPhp\Api\Response
+ * @uses \MobilePayPhp\Api\Validation\ValidationRule
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Id
+ * @uses \MobilePayPhp\MobilePay\AppPayment\PaymentPoints\GetPaymentPointResponse
+ * @uses \MobilePayPhp\MobilePay\AppPayment\PaymentPoints\PaymentPointState
  *
  * @group unit
  */

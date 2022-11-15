@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment;
+namespace MobilePayPhp\MobilePay\AppPayment;
 
-use Jschaedl\MobilePay\AppPayment\Exception\InvalidArgumentException;
+use MobilePayPhp\MobilePay\AppPayment\Exception\InvalidArgumentException;
 
 /**
- * @see \Jschaedl\MobilePay\AppPayment\DateTimeFactoryTest
+ * @see \MobilePayPhp\MobilePay\AppPayment\DateTimeFactoryTest
  */
 final class DateTimeFactory
 {

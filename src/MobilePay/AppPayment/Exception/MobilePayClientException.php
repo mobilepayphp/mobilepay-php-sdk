@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Exception;
+namespace MobilePayPhp\MobilePay\AppPayment\Exception;
 
-use Jschaedl\Api\Exception\ClientException;
-use Jschaedl\Api\Validation\ValidationRule;
-use Jschaedl\Api\Validation\ValidationTrait;
+use MobilePayPhp\Api\Exception\ClientException;
+use MobilePayPhp\Api\Validation\ValidationRule;
+use MobilePayPhp\Api\Validation\ValidationTrait;
 
 class MobilePayClientException extends ClientException
 {

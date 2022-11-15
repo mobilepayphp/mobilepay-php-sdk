@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment;
+namespace MobilePayPhp\MobilePay\AppPayment;
 
 /**
- * @see \Jschaedl\MobilePay\AppPayment\AmountTest
+ * @see \MobilePayPhp\MobilePay\AppPayment\AmountTest
  */
 final class Amount
 {

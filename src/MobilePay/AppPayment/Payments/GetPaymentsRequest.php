@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Payments;
+namespace MobilePayPhp\MobilePay\AppPayment\Payments;
 
-use Jschaedl\Api\IsGetTrait;
-use Jschaedl\Api\RequestInterface;
+use MobilePayPhp\Api\IsGetTrait;
+use MobilePayPhp\Api\RequestInterface;
 
 /**
- * @see \Jschaedl\MobilePay\AppPayment\Payments\GetPaymentsRequestTest
+ * @see \MobilePayPhp\MobilePay\AppPayment\Payments\GetPaymentsRequestTest
  */
 final class GetPaymentsRequest implements RequestInterface
 {

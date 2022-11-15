@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Refunds;
+namespace MobilePayPhp\MobilePay\AppPayment\Refunds;
 
-use Jschaedl\MobilePay\AppPayment\Amount;
-use Jschaedl\MobilePay\AppPayment\Id;
+use MobilePayPhp\MobilePay\AppPayment\Amount;
+use MobilePayPhp\MobilePay\AppPayment\Id;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\Refunds\CreateRefundRequest
- * @covers \Jschaedl\Api\IsPostTrait
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\CreateRefundRequest
+ * @covers \MobilePayPhp\Api\IsPostTrait
  *
- * @uses \Jschaedl\MobilePay\AppPayment\Amount
- * @uses \Jschaedl\MobilePay\AppPayment\Id
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Amount
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Id
  *
  * @group unit
  */

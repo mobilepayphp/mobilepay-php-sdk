@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment;
+namespace MobilePayPhp\MobilePay\AppPayment;
 
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\Id
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Id
  *
  * @group unit
  */

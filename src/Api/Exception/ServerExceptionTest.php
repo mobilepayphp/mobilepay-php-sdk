@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\Api\Exception;
+namespace MobilePayPhp\Api\Exception;
 
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\Api\Exception\ServerException
- * @covers \Jschaedl\Api\Exception\ResponseException
+ * @covers \MobilePayPhp\Api\Exception\ServerException
+ * @covers \MobilePayPhp\Api\Exception\ResponseException
  *
  * @group unit
  */
@@ -26,7 +26,7 @@ final class ServerExceptionTest extends TestCase
     public function test_it_throws_InvalidArgumentException_on_non_4xx_code(int $invalidCode): void
     {
         $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Class "Jschaedl\Api\Exception\ServerException" constructor argument $code must be a 5xx status code');
+        $this->expectExceptionMessage('Class "MobilePayPhp\Api\Exception\ServerException" constructor argument $code must be a 5xx status code');
 
         new ServerException($invalidCode, 'invalid code');
     }

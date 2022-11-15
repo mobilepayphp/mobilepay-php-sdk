@@ -2,33 +2,33 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Payments;
+namespace MobilePayPhp\MobilePay\AppPayment\Payments;
 
-use Jschaedl\MobilePay\AppPayment\Amount;
-use Jschaedl\MobilePay\AppPayment\ClientTestTrait;
-use Jschaedl\MobilePay\AppPayment\Id;
+use MobilePayPhp\MobilePay\AppPayment\Amount;
+use MobilePayPhp\MobilePay\AppPayment\ClientTestTrait;
+use MobilePayPhp\MobilePay\AppPayment\Id;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\Payments\Client
- * @covers \Jschaedl\Api\Client
- * @covers \Jschaedl\Api\IsGetTrait
- * @covers \Jschaedl\Api\IsPostTrait
- * @covers \Jschaedl\Api\Response
- * @covers \Jschaedl\Api\Validation\ValidationRule
- * @covers \Jschaedl\Api\Validation\ValidationTrait
- * @covers \Jschaedl\MobilePay\AppPayment\Amount
- * @covers \Jschaedl\MobilePay\AppPayment\DateTimeFactory
- * @covers \Jschaedl\MobilePay\AppPayment\Id
- * @covers \Jschaedl\MobilePay\AppPayment\Payments\CancelPaymentRequest
- * @covers \Jschaedl\MobilePay\AppPayment\Payments\CapturePaymentRequest
- * @covers \Jschaedl\MobilePay\AppPayment\Payments\CreatePaymentRequest
- * @covers \Jschaedl\MobilePay\AppPayment\Payments\CreatePaymentResponse
- * @covers \Jschaedl\MobilePay\AppPayment\Payments\GetPaymentRequest
- * @covers \Jschaedl\MobilePay\AppPayment\Payments\GetPaymentResponse
- * @covers \Jschaedl\MobilePay\AppPayment\Payments\PaymentState
- * @covers \Jschaedl\MobilePay\AppPayment\Payments\ReservePaymentRequest
- * @covers \Jschaedl\MobilePay\AppPayment\ResponseHandler
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\Client
+ * @covers \MobilePayPhp\Api\Client
+ * @covers \MobilePayPhp\Api\IsGetTrait
+ * @covers \MobilePayPhp\Api\IsPostTrait
+ * @covers \MobilePayPhp\Api\Response
+ * @covers \MobilePayPhp\Api\Validation\ValidationRule
+ * @covers \MobilePayPhp\Api\Validation\ValidationTrait
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Amount
+ * @covers \MobilePayPhp\MobilePay\AppPayment\DateTimeFactory
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Id
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\CancelPaymentRequest
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\CapturePaymentRequest
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\CreatePaymentRequest
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\CreatePaymentResponse
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\GetPaymentRequest
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\GetPaymentResponse
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\PaymentState
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\ReservePaymentRequest
+ * @covers \MobilePayPhp\MobilePay\AppPayment\ResponseHandler
  *
  * @group e2e
  */

@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Refunds;
+namespace MobilePayPhp\MobilePay\AppPayment\Refunds;
 
-use Jschaedl\Api\Validation\Exception\InvalidArgumentException;
+use MobilePayPhp\Api\Validation\Exception\InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\Refunds\CreateRefundResponse
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\CreateRefundResponse
  *
- * @uses \Jschaedl\Api\Validation\ValidationRule
- * @uses \Jschaedl\MobilePay\AppPayment\DateTimeFactory
- * @uses \Jschaedl\MobilePay\AppPayment\Id
+ * @uses \MobilePayPhp\Api\Validation\ValidationRule
+ * @uses \MobilePayPhp\MobilePay\AppPayment\DateTimeFactory
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Id
  *
  * @group unit
  */

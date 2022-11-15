@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\MobilePay\AppPayment\Payments;
+namespace MobilePayPhp\MobilePay\AppPayment\Payments;
 
-use Jschaedl\MobilePay\AppPayment\Id;
+use MobilePayPhp\MobilePay\AppPayment\Id;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jschaedl\MobilePay\AppPayment\Payments\CancelPaymentRequest
- * @covers \Jschaedl\Api\IsPostTrait
+ * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\CancelPaymentRequest
+ * @covers \MobilePayPhp\Api\IsPostTrait
  *
- * @uses \Jschaedl\MobilePay\AppPayment\Id
+ * @uses \MobilePayPhp\MobilePay\AppPayment\Id
  *
  * @group unit
  */

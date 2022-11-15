@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Jschaedl\Api;
+namespace MobilePayPhp\Api;
 
 /**
  * Client implementation which provides a retry option of failed requests due to network and server errors using this strategy:
  * Retrying requests up to a fixed number of times using an exponential backoff with jitter strategy.
  *
  * @see https://mobilepaydev.github.io/MobilePay-Payments-API/docs/app-payments/build-basics#retry-policy
- * @see \Jschaedl\Api\RetryClientTest
+ * @see \MobilePayPhp\Api\RetryClientTest
  */
 final class RetryClient implements ClientInterface
 {
