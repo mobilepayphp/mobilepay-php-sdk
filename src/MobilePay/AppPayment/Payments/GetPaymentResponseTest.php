@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
  * @uses \MobilePayPhp\MobilePay\AppPayment\Payments\PaymentState
  * @uses \MobilePayPhp\MobilePay\AppPayment\Amount
  * @uses \MobilePayPhp\MobilePay\AppPayment\DateTimeFactory
- * @uses \MobilePayPhp\MobilePay\AppPayment\Id
+ * @uses \MobilePayPhp\MobilePay\Id
  *
  * @group unit
  */

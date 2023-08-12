@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace MobilePayPhp\Api\Exception;
 
+/**
+ * @see \MobilePayPhp\Api\Exception\ClientExceptionTest
+ */
 class ClientException extends ResponseException
 {
     public function __construct(int $code, string $message)

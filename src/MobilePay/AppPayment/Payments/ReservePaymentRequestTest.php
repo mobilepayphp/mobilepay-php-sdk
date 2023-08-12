@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace MobilePayPhp\MobilePay\AppPayment\Payments;
 
-use MobilePayPhp\MobilePay\AppPayment\Id;
+use MobilePayPhp\MobilePay\Id;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\ReservePaymentRequest
  *
  * @uses \MobilePayPhp\Api\IsGetTrait
- * @uses \MobilePayPhp\MobilePay\AppPayment\Id
+ * @uses \MobilePayPhp\MobilePay\Id
  *
  * @group unit
  */

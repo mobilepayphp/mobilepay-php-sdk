@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @uses \MobilePayPhp\Api\Validation\ValidationRule
  * @uses \MobilePayPhp\MobilePay\AppPayment\DateTimeFactory
- * @uses \MobilePayPhp\MobilePay\AppPayment\Id
+ * @uses \MobilePayPhp\MobilePay\Id
  *
  * @group unit
  */
@@ -45,6 +45,8 @@ final class GetRefundResponseTest extends TestCase
 
     /**
      * @dataProvider invalidPayloadProvider
+     *
+     * @param mixed[]|array<string, null>|array<string, int>|array<string, string> $payload
      */
     public function test_it_should_throw_invalid_argument_exception_on_invalid_payload(array $payload, string $expectedExceptionMessage): void
     {

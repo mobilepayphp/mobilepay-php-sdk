@@ -7,7 +7,7 @@ namespace MobilePayPhp\MobilePay\AppPayment\Payments;
 use MobilePayPhp\Api\IsPostTrait;
 use MobilePayPhp\Api\RequestInterface;
 use MobilePayPhp\MobilePay\AppPayment\Amount;
-use MobilePayPhp\MobilePay\AppPayment\Id;
+use MobilePayPhp\MobilePay\Id;
 
 /**
  * @see \MobilePayPhp\MobilePay\AppPayment\Payments\CreatePaymentRequestTest
@@ -37,7 +37,7 @@ final class CreatePaymentRequest implements RequestInterface
     }
 
     /**
-     * @return array{amount: int, idempotencyKey: string, paymentPointId: string, redirectUri: string, reference: string, description: string}
+     * @return array{amount: int, idempotencyKey: string, paymentPointId: string, redirectUri: string, reference: string, description: string}|null
      */
     public function getBody(): ?array
     {

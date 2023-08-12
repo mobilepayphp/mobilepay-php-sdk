@@ -2,18 +2,19 @@
 
 declare(strict_types=1);
 
-namespace MobilePayPhp\MobilePay\AppPayment;
+namespace MobilePayPhp\MobilePay;
 
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
 /**
- * @see \MobilePayPhp\MobilePay\AppPayment\IdTest
+ * @see \MobilePayPhp\MobilePay\IdTest
  */
 final class Id
 {
-    private function __construct(private readonly UuidInterface $id)
-    {
+    private function __construct(
+        private readonly UuidInterface $id
+    ) {
     }
 
     public static function create(): self
@@ -27,11 +28,6 @@ final class Id
     }
 
     public function toString(): string
-    {
-        return $this->id->toString();
-    }
-
-    public function getId(): string
     {
         return $this->id->toString();
     }

@@ -7,7 +7,7 @@ namespace MobilePayPhp\MobilePay\AppPayment\Refunds;
 use MobilePayPhp\Api\IsPostTrait;
 use MobilePayPhp\Api\RequestInterface;
 use MobilePayPhp\MobilePay\AppPayment\Amount;
-use MobilePayPhp\MobilePay\AppPayment\Id;
+use MobilePayPhp\MobilePay\Id;
 
 /**
  * @see \MobilePayPhp\MobilePay\AppPayment\Refunds\CreateRefundRequestTest
@@ -35,7 +35,7 @@ final class CreateRefundRequest implements RequestInterface
     }
 
     /**
-     * @return array{paymentId: string, amount: int, idempotencyKey: string, reference: string, description: string}
+     * @return array{paymentId: string, amount: int, idempotencyKey: string, reference: string, description: string}|null
      */
     public function getBody(): ?array
     {

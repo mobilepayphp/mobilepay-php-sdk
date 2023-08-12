@@ -6,12 +6,13 @@ namespace MobilePayPhp\MobilePay\AppPayment\Payments;
 
 use MobilePayPhp\MobilePay\AppPayment\Amount;
 use MobilePayPhp\MobilePay\AppPayment\ClientTestTrait;
-use MobilePayPhp\MobilePay\AppPayment\Id;
+use MobilePayPhp\MobilePay\Id;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\Client
  * @covers \MobilePayPhp\Api\Client
+ * @covers \MobilePayPhp\Api\RetryClient
  * @covers \MobilePayPhp\Api\IsGetTrait
  * @covers \MobilePayPhp\Api\IsPostTrait
  * @covers \MobilePayPhp\Api\Response
@@ -19,7 +20,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \MobilePayPhp\Api\Validation\ValidationTrait
  * @covers \MobilePayPhp\MobilePay\AppPayment\Amount
  * @covers \MobilePayPhp\MobilePay\AppPayment\DateTimeFactory
- * @covers \MobilePayPhp\MobilePay\AppPayment\Id
+ * @covers \MobilePayPhp\MobilePay\Id
  * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\CancelPaymentRequest
  * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\CapturePaymentRequest
  * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\CreatePaymentRequest
@@ -28,7 +29,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\GetPaymentResponse
  * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\PaymentState
  * @covers \MobilePayPhp\MobilePay\AppPayment\Payments\ReservePaymentRequest
- * @covers \MobilePayPhp\MobilePay\AppPayment\ResponseHandler
+ * @covers \MobilePayPhp\MobilePay\ResponseHandler
  *
  * @group e2e
  */
@@ -43,7 +44,7 @@ final class ClientTest extends TestCase
             static::fail('No paymentPointId is set, check your MOBILEPAY_PAYMENTPOINT_ID env var.');
         }
 
-        $this->paymentsClient = new Client($this->getMobilePayClient(), $paymentPointId);
+        $this->paymentsClient = new Client($this->getMobilePayClient(true), $paymentPointId);
     }
 
     public function test_cancelPayment(): void

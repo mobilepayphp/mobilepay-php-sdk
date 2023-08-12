@@ -6,7 +6,7 @@ namespace MobilePayPhp\MobilePay\AppPayment\Refunds;
 
 use MobilePayPhp\Api\ClientInterface;
 use MobilePayPhp\MobilePay\AppPayment\Amount;
-use MobilePayPhp\MobilePay\AppPayment\Id;
+use MobilePayPhp\MobilePay\Id;
 
 /**
  * @see \MobilePayPhp\MobilePay\AppPayment\Refunds\ClientTest

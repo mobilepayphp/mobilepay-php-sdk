@@ -1,0 +1,61 @@
+{
+  "required": [
+    "webhooks"
+  ],
+  "type": "object",
+  "properties": {
+    "webhooks": {
+      "description": "The requested list of webhooks.\n\n",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/SingleWebhookResponse"
+      }
+    }
+  },
+  "definitions": {
+    "SingleWebhookResponse" : {
+      "required": [
+        "events",
+        "signatureKey",
+        "url",
+        "webhookId"
+      ],
+      "type": "object",
+      "properties": {
+        "webhookId": {
+          "format": "uuid",
+          "description": "Unique identifier for the object.\n\n",
+          "type": "string",
+          "example": "e4a2e195-74f6-42e1-a172-83291c9d2a41"
+        },
+        "url": {
+          "description": "The URL of the webhook endpoint.\n\n",
+          "type": "string",
+          "example": "https://www.my-site.com/webhooks"
+        },
+        "events": {
+          "description": "List of subscribed events.\n\n",
+          "type": "array",
+          "items": {
+            "description": "",
+            "type": "string"
+          },
+          "example": [
+            "payment.reserved"
+          ]
+        },
+        "signatureKey": {
+          "description": "The webhook's secret is used to generate webhook signatures.\n\n",
+          "type": "string",
+          "example": "my-secure-signature-key"
+        },
+        "paymentPointId": {
+          "format": "uuid",
+          "description": "Payment point for which the webhook received notifications.\n\n",
+          "type": "string",
+          "example": null
+        }
+      }
+    }
+  }
+}

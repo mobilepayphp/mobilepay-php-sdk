@@ -6,7 +6,7 @@ namespace MobilePayPhp\MobilePay\AppPayment\Payments;
 
 use MobilePayPhp\Api\IsPostTrait;
 use MobilePayPhp\Api\RequestInterface;
-use MobilePayPhp\MobilePay\AppPayment\Id;
+use MobilePayPhp\MobilePay\Id;
 
 /**
  * @see \MobilePayPhp\MobilePay\AppPayment\Payments\ReservePaymentRequestTest

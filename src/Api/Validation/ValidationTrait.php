@@ -20,7 +20,7 @@ trait ValidationTrait
     {
         // 1. all mandatory are there
         $neededProperties = array_filter(
-            array_map(fn (ValidationRule $validationRule) => $validationRule->isMandatory() ? $validationRule->getName() : null, $validationRules)
+            array_map(fn (ValidationRule $validationRule): ?string => $validationRule->isMandatory() ? $validationRule->getName() : null, $validationRules)
         );
 
         if ($missingData = array_diff_key(array_flip($neededProperties), $data)) {
@@ -40,6 +40,9 @@ trait ValidationTrait
         }
     }
 
+    /**
+     * @return mixed[]
+     */
     private static function findEmptyProperties(array $neededProperties, array $data): array
     {
         $emptyProperties = [];
@@ -52,6 +55,9 @@ trait ValidationTrait
         return $emptyProperties;
     }
 
+    /**
+     * @return mixed[]
+     */
     private static function findInvalidProperties(array $validationRules, array $data): array
     {
         $invalidProperties = [];

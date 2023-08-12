@@ -39,7 +39,7 @@ final class GetPaymentsResponse
         $this->pageSize = (int) $payload['pageSize'];
         $this->nextPageNumber = isset($payload['nextPageNumber']) ? (int) $payload['nextPageNumber'] : null;
 
-        $this->payments = array_map(fn (array $payment) => new GetPaymentResponse($payment), $payload['payments'] ?? []);
+        $this->payments = array_map(fn (array $payment): \MobilePayPhp\MobilePay\AppPayment\Payments\GetPaymentResponse => new GetPaymentResponse($payment), $payload['payments'] ?? []);
     }
 
     public static function fromResponse(ResponseInterface $response): self
