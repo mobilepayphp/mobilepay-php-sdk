@@ -20,6 +20,9 @@ final class Response implements ResponseInterface
         return $this->statusCode;
     }
 
+    /**
+     * @return mixed[]
+     */
     public function getBody(): array
     {
         return $this->body;

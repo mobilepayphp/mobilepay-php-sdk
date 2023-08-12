@@ -26,6 +26,16 @@ parameters:
 			path: ../src/MobilePay/AppPayment/Payments/GetPaymentsResponseTest.php
 
 		-
+			message: "#^Parameter \\#1 \\$payload of class MobilePayPhp\\\\MobilePay\\\\AppPayment\\\\Refunds\\\\CreateRefundResponse constructor expects array\\<string, int\\|string\\>, array given\\.$#"
+			count: 1
+			path: ../src/MobilePay/AppPayment/Refunds/CreateRefundResponseTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$payload of class MobilePayPhp\\\\MobilePay\\\\AppPayment\\\\Refunds\\\\GetRefundResponse constructor expects array\\<string, int\\|string\\>, array given\\.$#"
+			count: 1
+			path: ../src/MobilePay/AppPayment/Refunds/GetRefundResponseTest.php
+
+		-
 			message: "#^Parameter \\#2 \\$array of function array_map expects array, array\\|int\\|string given\\.$#"
 			count: 1
 			path: ../src/MobilePay/AppPayment/Refunds/GetRefundsResponse.php
@@ -34,3 +44,28 @@ parameters:
 			message: "#^Parameter \\#1 \\$payload of class MobilePayPhp\\\\MobilePay\\\\AppPayment\\\\Refunds\\\\GetRefundsResponse constructor expects array\\<string, int\\|string\\>, array\\<string, array\\<int, array\\<string, int\\|string\\>\\>\\|int\\> given\\.$#"
 			count: 1
 			path: ../src/MobilePay/AppPayment/Refunds/GetRefundsResponseTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$payload of class MobilePayPhp\\\\MobilePay\\\\Webhook\\\\Response\\\\SingleWebhook constructor expects array\\{events\\: array, signatureKey\\: string, url\\: string, webhookId\\: string, paymentPointId\\?\\: string\\}, array given\\.$#"
+			count: 1
+			path: ../src/MobilePay/Webhook/Response/SingleWebhook.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(array\\|string\\)\\: mixed\\)\\|null, Closure\\(array\\)\\: MobilePayPhp\\\\MobilePay\\\\Webhook\\\\Response\\\\SingleWebhook given\\.$#"
+			count: 1
+			path: ../src/MobilePay/Webhook/Response/WebhookCollection.php
+
+		-
+			message: "#^Parameter \\#1 \\$payload of class MobilePayPhp\\\\MobilePay\\\\Webhook\\\\Response\\\\SingleWebhook constructor expects array\\{events\\: array, signatureKey\\: string, url\\: string, webhookId\\: string, paymentPointId\\?\\: string\\}, array given\\.$#"
+			count: 1
+			path: ../src/MobilePay/Webhook/Response/WebhookCollection.php
+
+		-
+			message: "#^Parameter \\#1 \\$payload of class MobilePayPhp\\\\MobilePay\\\\Webhook\\\\Response\\\\WebhookCollection constructor expects array\\{webhooks\\: array\\{events\\: array, signatureKey\\: string, url\\: string, webhookId\\: string, paymentPointId\\?\\: string\\}\\}, array given\\.$#"
+			count: 1
+			path: ../src/MobilePay/Webhook/Response/WebhookCollection.php
+
+		-
+			message: "#^Strict comparison using \\=\\=\\= between false and non\\-empty\\-string will always evaluate to false\\.$#"
+			count: 1
+			path: ../src/MobilePay/Webhook/Schema/Validator.php

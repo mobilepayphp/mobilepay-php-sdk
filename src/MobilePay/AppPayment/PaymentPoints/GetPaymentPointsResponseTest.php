@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @uses \MobilePayPhp\Api\Response
  * @uses \MobilePayPhp\Api\Validation\ValidationRule
- * @uses \MobilePayPhp\MobilePay\AppPayment\Id
+ * @uses \MobilePayPhp\MobilePay\Id
  * @uses \MobilePayPhp\MobilePay\AppPayment\PaymentPoints\GetPaymentPointResponse
  * @uses \MobilePayPhp\MobilePay\AppPayment\PaymentPoints\PaymentPointState
  *

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace MobilePayPhp\MobilePay\AppPayment\Refunds;
 
 use MobilePayPhp\MobilePay\AppPayment\Amount;
-use MobilePayPhp\MobilePay\AppPayment\Id;
+use MobilePayPhp\MobilePay\Id;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \MobilePayPhp\Api\IsPostTrait
  *
  * @uses \MobilePayPhp\MobilePay\AppPayment\Amount
- * @uses \MobilePayPhp\MobilePay\AppPayment\Id
+ * @uses \MobilePayPhp\MobilePay\Id
  *
  * @group unit
  */

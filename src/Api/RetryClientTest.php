@@ -31,7 +31,7 @@ final class RetryClientTest extends TestCase
     }
 }
 
-class TestClient implements ClientInterface
+final class TestClient implements ClientInterface
 {
     public array $requests = [];
 
@@ -43,7 +43,7 @@ class TestClient implements ClientInterface
     }
 }
 
-class TestRequest implements RequestInterface
+final class TestRequest implements RequestInterface
 {
     use IsGetTrait;
 

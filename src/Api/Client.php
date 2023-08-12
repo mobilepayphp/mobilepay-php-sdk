@@ -24,6 +24,11 @@ final class Client implements ClientInterface
     {
         $psr7Request = $this->requestFactory->createRequest($request->getMethod(), $this->apiHost.$request->getUri());
 
+        // todo: add custom header
+        //        foreach($request->getHeaders() as $header) {
+        //            $psr7Request = $psr7Request->withHeader($header->getName(), $header->getValue());
+        //        }
+
         $psr7Request = $psr7Request
             ->withHeader('Accept', 'application/json')
             ->withHeader('Content-Type', 'application/json')
@@ -31,8 +36,13 @@ final class Client implements ClientInterface
         ;
 
         $requestBody = $request->getBody();
-        if (!empty($requestBody)) {
-            $psr7Request = $psr7Request->withBody($this->streamFactory->createStream(json_encode($requestBody, JSON_THROW_ON_ERROR)));
+        if (null !== $requestBody) {
+            $psr7Request = $psr7Request->withBody(
+                $this->streamFactory->createStream(
+                    // todo: add custom encoder
+                    json_encode($requestBody, JSON_THROW_ON_ERROR)
+                )
+            );
         }
 
         $psr7Response = $this->httpClient->sendRequest($psr7Request);
@@ -42,6 +52,7 @@ final class Client implements ClientInterface
 
         return $this->responseHandler->handle(
             $statusCode,
+            // todo: add custom decoder
             empty($contents) ? [] : json_decode($contents, true, 512, JSON_THROW_ON_ERROR)
         );
     }

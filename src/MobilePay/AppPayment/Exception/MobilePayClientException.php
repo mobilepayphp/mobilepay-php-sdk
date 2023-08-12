@@ -8,7 +8,7 @@ use MobilePayPhp\Api\Exception\ClientException;
 use MobilePayPhp\Api\Validation\ValidationRule;
 use MobilePayPhp\Api\Validation\ValidationTrait;
 
-class MobilePayClientException extends ClientException
+final class MobilePayClientException extends ClientException
 {
     use ValidationTrait;
 

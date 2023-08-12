@@ -35,7 +35,7 @@ final class GetPaymentPointsResponse
         $this->pageSize = (int) $payload['pageSize'];
         $this->nextPageNumber = isset($payload['nextPageNumber']) ? (int) $payload['nextPageNumber'] : null;
 
-        $this->paymentPoints = array_map(fn (array $paymentPoint) => new GetPaymentPointResponse($paymentPoint), $payload['paymentPoints'] ?? []);
+        $this->paymentPoints = array_map(fn (array $paymentPoint): GetPaymentPointResponse => new GetPaymentPointResponse($paymentPoint), $payload['paymentPoints'] ?? []);
     }
 
     public static function fromResponse(ResponseInterface $response): self

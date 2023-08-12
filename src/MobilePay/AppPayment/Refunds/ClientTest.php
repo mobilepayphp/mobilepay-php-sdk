@@ -6,14 +6,15 @@ namespace MobilePayPhp\MobilePay\AppPayment\Refunds;
 
 use MobilePayPhp\MobilePay\AppPayment\Amount;
 use MobilePayPhp\MobilePay\AppPayment\ClientTestTrait;
-use MobilePayPhp\MobilePay\AppPayment\Id;
 use MobilePayPhp\MobilePay\AppPayment\Payments\Client as PaymentsClient;
 use MobilePayPhp\MobilePay\AppPayment\Refunds\Client as RefundsClient;
+use MobilePayPhp\MobilePay\Id;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\Client
  * @covers \MobilePayPhp\Api\Client
+ * @covers \MobilePayPhp\Api\RetryClient
  * @covers \MobilePayPhp\Api\IsGetTrait
  * @covers \MobilePayPhp\Api\IsPostTrait
  * @covers \MobilePayPhp\Api\Response
@@ -21,12 +22,12 @@ use PHPUnit\Framework\TestCase;
  * @covers \MobilePayPhp\Api\Validation\ValidationTrait
  * @covers \MobilePayPhp\MobilePay\AppPayment\Amount
  * @covers \MobilePayPhp\MobilePay\AppPayment\DateTimeFactory
- * @covers \MobilePayPhp\MobilePay\AppPayment\Id
+ * @covers \MobilePayPhp\MobilePay\Id
  * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\CreateRefundRequest
  * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\CreateRefundResponse
  * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\GetRefundRequest
  * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\GetRefundResponse
- * @covers \MobilePayPhp\MobilePay\AppPayment\ResponseHandler
+ * @covers \MobilePayPhp\MobilePay\ResponseHandler
  *
  * @uses \MobilePayPhp\MobilePay\AppPayment\Payments\Client
  * @uses \MobilePayPhp\MobilePay\AppPayment\Payments\CapturePaymentRequest
@@ -52,8 +53,8 @@ final class ClientTest extends TestCase
             static::fail('No paymentPointId is set, check your MOBILEPAY_PAYMENTPOINT_ID env var.');
         }
 
-        $this->paymentsClient = new PaymentsClient($this->getMobilePayClient(), $paymentPointId);
-        $this->refundsClient = new RefundsClient($this->getMobilePayClient());
+        $this->paymentsClient = new PaymentsClient($this->getMobilePayClient(true), $paymentPointId);
+        $this->refundsClient = new RefundsClient($this->getMobilePayClient(true));
     }
 
     public function test_refunds(): void

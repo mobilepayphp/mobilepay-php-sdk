@@ -8,7 +8,7 @@ use MobilePayPhp\Api\ResponseInterface;
 use MobilePayPhp\Api\Validation\ValidationRule;
 use MobilePayPhp\Api\Validation\ValidationTrait;
 use MobilePayPhp\MobilePay\AppPayment\DateTimeFactory;
-use MobilePayPhp\MobilePay\AppPayment\Id;
+use MobilePayPhp\MobilePay\Id;
 
 /**
  * @see \MobilePayPhp\MobilePay\AppPayment\Refunds\GetRefundResponseTest

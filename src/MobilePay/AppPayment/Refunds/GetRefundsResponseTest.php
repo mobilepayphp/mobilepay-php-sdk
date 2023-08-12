@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\GetRefundsResponse
  * @covers \MobilePayPhp\MobilePay\AppPayment\Refunds\GetRefundResponse
  *
- * @uses \MobilePayPhp\MobilePay\AppPayment\Id
+ * @uses \MobilePayPhp\MobilePay\Id
  * @uses \MobilePayPhp\MobilePay\AppPayment\DateTimeFactory
  * @uses \MobilePayPhp\Api\Validation\ValidationRule
  *

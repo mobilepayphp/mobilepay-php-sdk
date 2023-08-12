@@ -6,7 +6,10 @@ namespace MobilePayPhp\MobilePay\AppPayment;
 
 use MobilePayPhp\Api\Client;
 use MobilePayPhp\Api\ClientInterface;
+use MobilePayPhp\Api\RetryClient;
 use MobilePayPhp\MobilePay\AppPayment\Payments\Client as PaymentsClient;
+use MobilePayPhp\MobilePay\Id;
+use MobilePayPhp\MobilePay\ResponseHandler;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpClient\Psr18Client;
 
@@ -17,7 +20,7 @@ trait ClientTestTrait
 {
     private PaymentsClient $paymentsClient;
 
-    private function getMobilePayClient(): ClientInterface
+    private function getMobilePayClient(bool $retry = false): ClientInterface
     {
         $apiHost = 'https://api.sandbox.mobilepay.dk';
 
@@ -28,8 +31,9 @@ trait ClientTestTrait
 
         $httpClient = HttpClient::create();
         $psr18HttpClient = new Psr18Client($httpClient);
+        $mobilePayClient = new Client($psr18HttpClient, $psr18HttpClient, $psr18HttpClient, new ResponseHandler(), $apiHost, $apiKey);
 
-        return new Client($psr18HttpClient, $psr18HttpClient, $psr18HttpClient, new ResponseHandler(), $apiHost, $apiKey);
+        return $retry ? new RetryClient($mobilePayClient) : $mobilePayClient;
     }
 
     private function createPayment(): Id

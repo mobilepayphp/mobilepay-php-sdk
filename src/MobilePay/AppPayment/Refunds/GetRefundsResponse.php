@@ -38,7 +38,7 @@ final class GetRefundsResponse
         $this->pageSize = (int) $payload['pageSize'];
         $this->nextPageNumber = isset($payload['nextPageNumber']) ? (int) $payload['nextPageNumber'] : null;
 
-        $this->refunds = array_map(fn (array $refund) => new GetRefundResponse($refund), $payload['refunds'] ?? []);
+        $this->refunds = array_map(fn (array $refund): \MobilePayPhp\MobilePay\AppPayment\Refunds\GetRefundResponse => new GetRefundResponse($refund), $payload['refunds'] ?? []);
     }
 
     public static function fromResponse(ResponseInterface $response): self

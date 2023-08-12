@@ -9,7 +9,7 @@ use MobilePayPhp\Api\Validation\ValidationRule;
 use MobilePayPhp\Api\Validation\ValidationTrait;
 use MobilePayPhp\MobilePay\AppPayment\Amount;
 use MobilePayPhp\MobilePay\AppPayment\DateTimeFactory;
-use MobilePayPhp\MobilePay\AppPayment\Id;
+use MobilePayPhp\MobilePay\Id;
 
 /**
  * @see \MobilePayPhp\MobilePay\AppPayment\Payments\GetPaymentResponseTest
@@ -75,12 +75,20 @@ final class GetPaymentResponse
 
     public function isAmountReserved(Amount $reservedAmount): bool
     {
-        return $this->state->isReserved() && $reservedAmount->getAmountInCent() === $this->amount;
+        if (!$this->state->isReserved()) {
+            return false;
+        }
+
+        return $reservedAmount->getAmountInCent() === $this->amount;
     }
 
     public function isAmountCaptured(Amount $capturedAmount): bool
     {
-        return $this->state->isCaptured() && $capturedAmount->getAmountInCent() === $this->amount;
+        if (!$this->state->isCaptured()) {
+            return false;
+        }
+
+        return $capturedAmount->getAmountInCent() === $this->amount;
     }
 
     public function getPaymentId(): Id

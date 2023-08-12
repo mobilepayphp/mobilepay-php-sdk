@@ -47,9 +47,11 @@
 
 ## github project structure
 
--- mobilepay-php
----- mobilepay-php-sdk-src
----- mobilepay-php-sdk
----- mobilepay-bundle
----- mobilepay-recipe
----- omnipay-mobilepay
+- mobilepay-php
+  - mobilepay-php-sdk-src
+  - mobilepay-php-sdk
+  - mobilepay-bundle
+  - mobilepay-recipe
+  - omnipay-mobilepay
+  - webhook-provider-symfony
+  - sylius-mobilepay-plugin

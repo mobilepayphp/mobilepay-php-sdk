@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \MobilePayPhp\MobilePay\AppPayment\PaymentPoints\GetPaymentPointsRequest
  * @covers \MobilePayPhp\Api\IsGetTrait
  *
- * @uses \MobilePayPhp\MobilePay\AppPayment\Id
+ * @uses \MobilePayPhp\MobilePay\Id
  *
  * @group unit
  */

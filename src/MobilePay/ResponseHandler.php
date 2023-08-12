@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MobilePayPhp\MobilePay\AppPayment;
+namespace MobilePayPhp\MobilePay;
 
 use MobilePayPhp\Api\Exception\ClientException;
 use MobilePayPhp\Api\Exception\ServerException;
@@ -12,13 +12,10 @@ use MobilePayPhp\Api\ResponseHandlerInterface;
 use MobilePayPhp\MobilePay\AppPayment\Exception\MobilePayClientException;
 
 /**
- * @see \MobilePayPhp\MobilePay\AppPayment\ResponseHandlerTest
+ * @see \MobilePayPhp\MobilePay\ResponseHandlerTest
  */
 final class ResponseHandler implements ResponseHandlerInterface
 {
-    /**
-     * {@inheritDoc}
-     */
     public function handle(int $statusCode, array $body): Response
     {
         switch ($statusCode) {

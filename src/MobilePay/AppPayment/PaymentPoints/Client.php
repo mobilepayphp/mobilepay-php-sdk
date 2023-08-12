@@ -6,9 +6,6 @@ namespace MobilePayPhp\MobilePay\AppPayment\PaymentPoints;
 
 use MobilePayPhp\Api\ClientInterface;
 
-/**
- * @see \MobilePayPhp\MobilePay\AppPayment\PaymentPointsGatewayTest
- */
 final class Client
 {
     public function __construct(private readonly ClientInterface $client)

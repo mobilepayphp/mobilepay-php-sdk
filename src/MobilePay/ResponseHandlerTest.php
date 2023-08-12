@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MobilePayPhp\MobilePay\AppPayment;
+namespace MobilePayPhp\MobilePay;
 
 use MobilePayPhp\Api\Exception\ClientException;
 use MobilePayPhp\Api\Exception\ServerException;
@@ -11,7 +11,7 @@ use MobilePayPhp\MobilePay\AppPayment\Exception\MobilePayClientException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \MobilePayPhp\MobilePay\AppPayment\ResponseHandler
+ * @covers \MobilePayPhp\MobilePay\ResponseHandler
  * @covers \MobilePayPhp\Api\Response
  * @covers \MobilePayPhp\Api\Exception\UnexpectedResponseException
  * @covers \MobilePayPhp\Api\Exception\ClientException

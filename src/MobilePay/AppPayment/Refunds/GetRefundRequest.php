@@ -6,7 +6,7 @@ namespace MobilePayPhp\MobilePay\AppPayment\Refunds;
 
 use MobilePayPhp\Api\IsGetTrait;
 use MobilePayPhp\Api\RequestInterface;
-use MobilePayPhp\MobilePay\AppPayment\Id;
+use MobilePayPhp\MobilePay\Id;
 
 /**
  * @see \MobilePayPhp\MobilePay\AppPayment\Refunds\GetRefundRequestTest

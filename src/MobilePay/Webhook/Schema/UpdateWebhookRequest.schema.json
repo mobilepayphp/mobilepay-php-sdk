@@ -1,0 +1,26 @@
+{
+  "required": [
+    "events",
+    "url"
+  ],
+  "type": "object",
+  "properties": {
+    "url": {
+      "description": "URL to where webhook requests will be sent. Must be HTTPS. Scheme and host will be converted to lower case. Result can be seen in the response.",
+      "type": "string"
+    },
+    "events": {
+      "description": "List of subscribed events.\n\n Allowed event types:\n* `payment.reserved`\n* `payment.expired`\n* `paymentpoint.activated`\n* `payment.cancelled_by_user`\n",
+      "type": "array",
+      "items": {
+        "description": "",
+        "type": "string"
+      }
+    },
+    "paymentPointId": {
+      "format": "uuid",
+      "description": "Optional. Webhook will receive notifications only coming from specified payment point.\n",
+      "type": "string"
+    }
+  }
+}
